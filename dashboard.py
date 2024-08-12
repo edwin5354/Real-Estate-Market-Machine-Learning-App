@@ -2,9 +2,9 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-st.image(r'C:\Users\Edwin\Python\bootcamp\Projects\Project_2\foolproof_house\images\house.png')
+st.image('images/house.png')
 st.text("The Sound of Silence")
-st.audio(r"C:\Users\Edwin\Python\bootcamp\Projects\Project_2\foolproof_house\music.mp3",format='audio/mp3', loop=True)
+st.audio("music.mp3",format='audio/mp3', loop=True)
 
 st.title('Hong Kong Real Estate Market Analysis')
 st.write('Welcome to the Real Estate Market Analysis App! This platform is designed for educational purposes, focusing on machine learning and data analysis within the real estate sector.')
@@ -12,16 +12,16 @@ st.write('Welcome to the Real Estate Market Analysis App! This platform is desig
 st.subheader('a) Summary of the Data Analysis of Real Estate Trends in Hong Kong.')
 st.write('The data was scraped from Centanet to uncover insights into real estate in Hong Kong. After data cleansing, the  dataset contains 667 rows. The parameters include region, district, number of bedrooms, gross floor area, salable area, price, building age, and more.')
 
-st.image(r"C:\Users\Edwin\Python\bootcamp\Projects\Project_2\foolproof_house\images\barplot.png")
+st.image("images/barplot.png")
 st.write('As illustrated in the bar plot above, the majority of real estate properties are located in the New Territories region, accounting for over 50 percent of the dataset.')
 
-st.image(r"C:\Users\Edwin\Python\bootcamp\Projects\Project_2\foolproof_house\images\boxplot.png")
+st.image("images/boxplot.png")
 st.write("Given that price is a significant factor, the box plot here displays property prices across different regions in Hong Kong. It's widely believed that Hong Kong Island has the most expensive real estate compared to other areas.")
 
-st.image(r"C:\Users\Edwin\Python\bootcamp\Projects\Project_2\foolproof_house\images\corr_matrix.png")
+st.image("images/corr_matrix.png")
 st.write('A correlation matrix heatmap was drawn to identify the underlying factors influencing property prices. As shown, the gross floor area, salable area, and number of bedrooms are significant factors (>.5) contributing to price fluctuations.')
 
-st.image(r"C:\Users\Edwin\Python\bootcamp\Projects\Project_2\foolproof_house\images\pairplot.png")
+st.image("images/pairplot.png")
 st.write('In the pair plot, the salable area, gross floor area, and number of bedrooms were specifically selected to explore their correlations. The observations indicate a positive correlation among these parameters.')
 
 st.subheader('b) Estimated property value prediction')
@@ -58,8 +58,8 @@ def input_features():
     return features
 
 # Open the saved models
-pickle_path = r"C:\Users\Edwin\Python\bootcamp\Projects\Project_2\foolproof_house\decision_tree_model.pkl"
-pickle_scaler_path = r"C:\Users\Edwin\Python\bootcamp\Projects\Project_2\foolproof_house\scaler.pkl"
+pickle_path = "model/decision_tree_model.pkl"
+pickle_scaler_path = "model/scaler.pkl"
 
 with open(pickle_path, 'rb') as file:
     saved_model = pickle.load(file)
