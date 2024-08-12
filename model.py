@@ -1,7 +1,7 @@
 import pandas as pd 
 
 # Open csv file
-df = pd.read_csv('./cleaned.csv')
+df = pd.read_csv('excel_files/cleaned.csv')
 
 # Drop some columns specifically for the ML model
 model_df = df.drop(['address', 'district', 'sap', 'gfa', 'gfap', 'monthly'], axis=1)
@@ -42,8 +42,8 @@ model_tree.fit(X_train, y_train)
 
 # Save the tree model and scaler model
 import pickle
-with open('decision_tree_model.pkl', 'wb') as model_file:
+with open('model/decision_tree_model.pkl', 'wb') as model_file:
     pickle.dump(model_tree, model_file)
 
-with open('scaler.pkl', 'wb') as scaler_file:
+with open('model/scaler.pkl', 'wb') as scaler_file:
     pickle.dump(sc, scaler_file)
